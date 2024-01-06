@@ -24,11 +24,8 @@ class Billing::Price < ApplicationHash
   end
 
   def calculate_quantity(team)
-    if quantity
-      team.send(quantity).billable.count
-    else
-      1
-    end
+    # hardwire to 1 since we charge by the team and not for each teammember
+    1
   end
 
   def currency_amount
